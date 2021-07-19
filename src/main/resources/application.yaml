@@ -1,0 +1,23 @@
+
+server:
+  error:
+    include-stacktrace: on_param
+  port: 9001
+
+spring:
+  application:
+    name: Markeplace Focado em Livros
+  datasource:
+    url: jdbc:mysql://localhost:3306/mercadolivro?createDatabaseIfNotExist=true
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+

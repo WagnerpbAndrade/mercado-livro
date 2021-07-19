@@ -1,0 +1,24 @@
+version: '2.4'
+
+services:
+  db:
+    image: mysql
+    container_name: mysql-forestinv
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - spring_data:/var/lib/mysql
+    mem_limit: 1024m
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+volumes:
+  spring_data:
